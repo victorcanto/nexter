@@ -1,0 +1,120 @@
+:root {
+  --color-primary: #c69963;
+  --color-primary-dark: #B28451;
+  --color-secondary: #101d2c;
+  --color-grey-light-1: #f9f7f6;
+  --color-grey-light-2: #aaa;
+  --color-grey-dark-1: #54483A;
+  --color-grey-dark-2: #6D5D4B;
+  --font-primary: "Nunito", sans-serif;
+  --font-display: "Josefin Sans", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--color-grey-dark-2);
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+}
+
+.heading-4, .heading-3, .heading-2, .heading-1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+.heading-4 {
+  font-size: 1.9rem;
+}
+.heading-4--light {
+  color: var(--color-grey-light-1);
+}
+.heading-4--dark {
+  color: var(--color-grey-dark-1);
+}
+
+.sidebar {
+  background-color: var(--color-primary);
+  grid-column: sidebar-start/sidebar-end;
+  grid-row: 1/-1;
+}
+
+.header {
+  background-color: var(--color-grey-dark-1);
+  grid-column: full-start/col-end 6;
+}
+
+.realtors {
+  background-color: var(--color-secondary);
+  grid-column: col-start 7/full-end;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  row-gap: 1.5rem;
+  column-gap: 2.5rem;
+}
+.feature__icon {
+  fill: var(--color-primary);
+  width: 4.5rem;
+  height: 4.5rem;
+  grid-row: 1/span 2;
+  transform: translateY(-1rem);
+}
+.feature__text {
+  font-size: 1.7rem;
+}
+
+.features {
+  grid-column: center-start/center-end;
+  margin: 15rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 6rem;
+  align-items: start;
+}
+
+.story__pictures {
+  background-color: var(--color-primary);
+  grid-column: full-start/col-end 4;
+}
+.story__content {
+  background-color: var(--color-grey-light-1);
+  grid-column: col-start 5/full-end;
+}
+
+.homes {
+  background-color: var(--color-secondary);
+  grid-column: center-start/center-end;
+}
+
+.gallery {
+  background-color: var(--color-grey-dark-2);
+  grid-column: full-start/full-end;
+}
+
+.footer {
+  background-color: var(--color-secondary);
+}
+
+/*# sourceMappingURL=style.css.map */
